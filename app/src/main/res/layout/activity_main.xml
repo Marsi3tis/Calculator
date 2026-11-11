@@ -14,7 +14,7 @@
         android:text="0"
         android:textSize="32sp"
         android:padding="10dp"
-        android:background="#B8DFE0"
+        android:background="#99A7B1"
         android:textColor="#000000" />
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,7 +28,8 @@
             android:minWidth="0dp"
             android:padding="0dp"
             android:textSize="12sp"
-            android:text="@string/btn_mc" />
+            android:text="@string/btn_mc"
+            style="@style/CalculatorButton"/>
         <Button
             android:id="@+id/buttonMR"
             android:layout_width="0dp"
@@ -37,7 +38,8 @@
             android:minWidth="0dp"
             android:padding="0dp"
             android:textSize="12sp"
-            android:text="@string/btn_mr" />
+            android:text="@string/btn_mr"
+            style="@style/CalculatorButton"/>
         <Button
             android:id="@+id/buttonMS"
             android:layout_width="0dp"
@@ -46,7 +48,8 @@
             android:minWidth="0dp"
             android:padding="0dp"
             android:textSize="12sp"
-            android:text="@string/btn_ms" />
+            android:text="@string/btn_ms"
+            style="@style/CalculatorButton"/>
         <Button
             android:id="@+id/buttonMPlus"
             android:layout_width="0dp"
@@ -55,7 +58,8 @@
             android:minWidth="0dp"
             android:padding="0dp"
             android:textSize="12sp"
-            android:text="@string/btn_mplus" />
+            android:text="@string/btn_mplus"
+            style="@style/CalculatorButton"/>
         <Button
             android:id="@+id/buttonMMinus"
             android:layout_width="0dp"
@@ -64,7 +68,8 @@
             android:minWidth="0dp"
             android:padding="0dp"
             android:textSize="12sp"
-            android:text="@string/btn_mminus" />
+            android:text="@string/btn_mminus"
+            style="@style/CalculatorButton"/>
 
     </LinearLayout>
 
@@ -81,7 +86,8 @@
             android:minWidth="0dp"
             android:padding="0dp"
             android:textSize="12sp"
-            android:text="@string/btn_backspace" />
+            android:text="@string/btn_backspace"
+            style="@style/CalculatorButton"/>
 
         <Button
             android:id="@+id/buttonCE"
@@ -91,7 +97,8 @@
             android:minWidth="0dp"
             android:padding="0dp"
             android:textSize="12sp"
-            android:text="@string/btn_clear_entry" />
+            android:text="@string/btn_clear_entry"
+            style="@style/CalculatorButton"/>
 
         <Button
             android:id="@+id/buttonClear"
@@ -101,7 +108,8 @@
             android:minWidth="0dp"
             android:padding="0dp"
             android:textSize="12sp"
-            android:text="@string/btn_clear" />
+            android:text="@string/btn_clear"
+            style="@style/CalculatorButton"/>
 
         <Button
             android:id="@+id/buttonDivide"
@@ -111,7 +119,8 @@
             android:minWidth="0dp"
             android:padding="0dp"
             android:textSize="12sp"
-            android:text="@string/btn_divide" />
+            android:text="@string/btn_divide"
+            style="@style/CalculatorButton"/>
 
         <Button
             android:id="@+id/buttonSqrt"
@@ -121,7 +130,8 @@
             android:minWidth="0dp"
             android:padding="0dp"
             android:textSize="12sp"
-            android:text="@string/btn_sqrt" />
+            android:text="@string/btn_sqrt"
+            style="@style/CalculatorButton"/>
 
     </LinearLayout>
 
@@ -137,7 +147,8 @@
             android:layout_weight="1"
             android:minWidth="0dp"
             android:padding="0dp"
-            android:text="@string/btn_7" />
+            android:text="@string/btn_7"
+            style="@style/CalculatorButton"/>
 
         <Button
             android:id="@+id/button8"
@@ -146,7 +157,8 @@
             android:layout_weight="1"
             android:minWidth="0dp"
             android:padding="0dp"
-            android:text="@string/btn_8" />
+            android:text="@string/btn_8"
+            style="@style/CalculatorButton"/>
 
         <Button
             android:id="@+id/button9"
@@ -155,7 +167,8 @@
             android:layout_weight="1"
             android:minWidth="0dp"
             android:padding="0dp"
-            android:text="@string/btn_9" />
+            android:text="@string/btn_9"
+            style="@style/CalculatorButton"/>
 
         <Button
             android:id="@+id/buttonDivide2"
@@ -164,7 +177,8 @@
             android:layout_weight="1"
             android:minWidth="0dp"
             android:padding="0dp"
-            android:text="@string/btn_divide" />
+            android:text="@string/btn_divide"
+            style="@style/CalculatorButton"/>
 
         <Button
             android:id="@+id/buttonPercent"
@@ -173,7 +187,8 @@
             android:layout_weight="1"
             android:minWidth="0dp"
             android:padding="0dp"
-            android:text="@string/btn_percent" />
+            android:text="@string/btn_percent"
+            style="@style/CalculatorButton"/>
 
     </LinearLayout>
 
@@ -189,7 +204,8 @@
             android:layout_weight="1"
             android:minWidth="0dp"
             android:padding="0dp"
-            android:text="@string/btn_4" />
+            android:text="@string/btn_4"
+            style="@style/CalculatorButton"/>
 
         <Button
             android:id="@+id/button5"
@@ -198,7 +214,8 @@
             android:layout_weight="1"
             android:minWidth="0dp"
             android:padding="0dp"
-            android:text="@string/btn_5" />
+            android:text="@string/btn_5"
+            style="@style/CalculatorButton"/>
 
         <Button
             android:id="@+id/button6"
@@ -207,7 +224,8 @@
             android:layout_weight="1"
             android:minWidth="0dp"
             android:padding="0dp"
-            android:text="@string/btn_6" />
+            android:text="@string/btn_6"
+            style="@style/CalculatorButton"/>
 
         <Button
             android:id="@+id/buttonMultiply"
@@ -216,7 +234,8 @@
             android:layout_weight="1"
             android:minWidth="0dp"
             android:padding="0dp"
-            android:text="@string/btn_multiply" />
+            android:text="@string/btn_multiply"
+            style="@style/CalculatorButton"/>
 
         <Button
             android:id="@+id/buttonReciprocal"
@@ -226,7 +245,8 @@
             android:minWidth="0dp"
             android:padding="0dp"
             android:textSize="12sp"
-            android:text="@string/btn_reciprocal" />
+            android:text="@string/btn_reciprocal"
+            style="@style/CalculatorButton"/>
 
     </LinearLayout>
 
@@ -253,7 +273,8 @@
                     android:layout_weight="1"
                     android:minWidth="0dp"
                     android:padding="0dp"
-                    android:text="@string/btn_1" />
+                    android:text="@string/btn_1"
+                    style="@style/CalculatorButton"/>
 
                 <Button
                     android:id="@+id/button2"
@@ -262,7 +283,8 @@
                     android:layout_weight="1"
                     android:minWidth="0dp"
                     android:padding="0dp"
-                    android:text="@string/btn_2" />
+                    android:text="@string/btn_2"
+                    style="@style/CalculatorButton"/>
 
                 <Button
                     android:id="@+id/button3"
@@ -271,7 +293,8 @@
                     android:layout_weight="1"
                     android:minWidth="0dp"
                     android:padding="0dp"
-                    android:text="@string/btn_3" />
+                    android:text="@string/btn_3"
+                    style="@style/CalculatorButton"/>
 
                 <Button
                     android:id="@+id/buttonSubtract"
@@ -280,7 +303,8 @@
                     android:layout_weight="1"
                     android:minWidth="0dp"
                     android:padding="0dp"
-                    android:text="@string/btn_subtract" />
+                    android:text="@string/btn_subtract"
+                    style="@style/CalculatorButton"/>
 
             </LinearLayout>
 
@@ -296,7 +320,8 @@
                     android:layout_weight="2"
                     android:minWidth="0dp"
                     android:padding="0dp"
-                    android:text="@string/btn_0" />
+                    android:text="@string/btn_0"
+                    style="@style/CalculatorButton"/>
 
                 <Button
                     android:id="@+id/buttonDecimal"
@@ -305,7 +330,8 @@
                     android:layout_weight="1"
                     android:minWidth="0dp"
                     android:padding="0dp"
-                    android:text="@string/btn_decimal" />
+                    android:text="@string/btn_decimal"
+                    style="@style/CalculatorButton"/>
 
                 <Button
                     android:id="@+id/buttonAdd"
@@ -314,7 +340,8 @@
                     android:layout_weight="1"
                     android:minWidth="0dp"
                     android:padding="0dp"
-                    android:text="@string/btn_add" />
+                    android:text="@string/btn_add"
+                    style="@style/CalculatorButton"/>
 
             </LinearLayout>
 
@@ -327,7 +354,8 @@
             android:layout_weight="1"
             android:minWidth="0dp"
             android:padding="0dp"
-            android:text="@string/btn_equals" />
+            android:text="@string/btn_equals"
+            style="@style/CalculatorButton"/>
 
     </LinearLayout>
 
