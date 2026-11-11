@@ -6,9 +6,9 @@ import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -95,12 +95,7 @@ public class MainActivity extends AppCompatActivity {
                     return;
             }
 
-            if(result == (long) result) {
-                textViewResult.setText(String.valueOf((long) result));
-            }
-            else{
-                textViewResult.setText(String.valueOf(result));
-            }
+            textViewResult.setText(formatResult(result));
 
             startNewNumber = true;
             operation = "";
@@ -375,5 +370,12 @@ public class MainActivity extends AppCompatActivity {
 
         operation = selectedOperation;
         startNewNumber = true;
+    }
+    private String formatResult(double number) {
+        if(Double.isNaN(number) || Double.isInfinite(number)){
+            return "Klaida";
+        }
+        BigDecimal result = BigDecimal.valueOf(number).round(new MathContext(12, RoundingMode.HALF_UP)).stripTrailingZeros();
+        return result.toPlainString();
     }
 }
