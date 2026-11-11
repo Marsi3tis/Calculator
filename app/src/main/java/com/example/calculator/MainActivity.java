@@ -43,10 +43,11 @@ public class MainActivity extends AppCompatActivity {
                 String number = button.getText().toString();
                 String current = textViewResult.getText().toString();
 
-                if (current.equals("0") || startNewNumber) {
+                if(current.equals("0") || startNewNumber) {
                     textViewResult.setText(number);
                     startNewNumber = false;
-                } else {
+                }
+                else{
                     textViewResult.setText(current + number);
                 }
             });
@@ -63,13 +64,12 @@ public class MainActivity extends AppCompatActivity {
         buttonDivide.setOnClickListener(v -> selectOperation("/"));
 
         buttonEquals.setOnClickListener(v -> {
-            if (operation.isEmpty() || startNewNumber) {
+            if(operation.isEmpty() || startNewNumber) {
                 return;
             }
             double secondNumber = Double.parseDouble(
                     textViewResult.getText().toString()
             );
-
             double result;
 
             switch (operation) {
@@ -95,9 +95,10 @@ public class MainActivity extends AppCompatActivity {
                     return;
             }
 
-            if (result == (long) result) {
+            if(result == (long) result) {
                 textViewResult.setText(String.valueOf((long) result));
-            } else {
+            }
+            else{
                 textViewResult.setText(String.valueOf(result));
             }
 
@@ -110,23 +111,27 @@ public class MainActivity extends AppCompatActivity {
             if (current.equals("Klaida")) {
                 return;
             }
+            if(!operation.isEmpty() && startNewNumber){
+                return;
+            }
             double number = Double.parseDouble(current);
 
             if (number < 0) {
                 textViewResult.setText("Klaida");
-                startNewNumber = true;
+                firstNumber = 0;
                 operation = "";
+                startNewNumber = true;
                 return;
             }
 
             double result = Math.sqrt(number);
             if (result == (long) result) {
                 textViewResult.setText(String.valueOf((long) result));
-            } else {
+            }
+            else{
                 textViewResult.setText(String.valueOf(result));
             }
-            startNewNumber = true;
-            operation = "";
+            startNewNumber = operation.isEmpty();
         });
 
         Button buttonClear = findViewById(R.id.buttonClear);
@@ -162,7 +167,8 @@ public class MainActivity extends AppCompatActivity {
 
             if (current.length() > 1) {
                 current = current.substring(0, current.length() - 1);
-            } else {
+            }
+            else{
                 current = "0";
             }
 
@@ -190,7 +196,8 @@ public class MainActivity extends AppCompatActivity {
 
             if (current.startsWith("-")) {
                 current = current.substring(1);
-            } else {
+            }
+            else{
                 current = "-" + current;
             }
             textViewResult.setText(current);
@@ -232,7 +239,8 @@ public class MainActivity extends AppCompatActivity {
 
             if (result == (long) result) {
                 textViewResult.setText(String.valueOf((long) result));
-            } else {
+            }
+            else{
                 textViewResult.setText(String.valueOf(result));
             }
             startNewNumber = operation.isEmpty();
