@@ -37,19 +37,18 @@ public class MainActivity extends AppCompatActivity {
                 R.id.button9,
         };
 
-        for(int buttonId : numberButtons) {
+        for (int buttonId : numberButtons) {
             Button button = findViewById(buttonId);
             button.setOnClickListener(v -> {
-               String number = button.getText().toString();
-               String current = textViewResult.getText().toString();
+                String number = button.getText().toString();
+                String current = textViewResult.getText().toString();
 
-               if (current.equals("0") || startNewNumber) {
-                   textViewResult.setText(number);
-                   startNewNumber = false;
-               }
-               else {
-                   textViewResult.setText(current + number);
-               }
+                if (current.equals("0") || startNewNumber) {
+                    textViewResult.setText(number);
+                    startNewNumber = false;
+                } else {
+                    textViewResult.setText(current + number);
+                }
             });
         }
         Button buttonAdd = findViewById(R.id.buttonAdd);
@@ -108,12 +107,12 @@ public class MainActivity extends AppCompatActivity {
         Button buttonSqrt = findViewById(R.id.buttonSqrt);
         buttonSqrt.setOnClickListener(v -> {
             String current = textViewResult.getText().toString();
-            if(current.equals("Klaida")){
+            if (current.equals("Klaida")) {
                 return;
             }
             double number = Double.parseDouble(current);
 
-            if(number < 0){
+            if (number < 0) {
                 textViewResult.setText("Klaida");
                 startNewNumber = true;
                 operation = "";
@@ -121,10 +120,9 @@ public class MainActivity extends AppCompatActivity {
             }
 
             double result = Math.sqrt(number);
-            if(result == (long) result) {
+            if (result == (long) result) {
                 textViewResult.setText(String.valueOf((long) result));
-            }
-            else{
+            } else {
                 textViewResult.setText(String.valueOf(result));
             }
             startNewNumber = true;
@@ -150,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
 
         buttonBackspace.setOnClickListener(v -> {
             String current = textViewResult.getText().toString();
-            if(current.equals("Klaida")) {
+            if (current.equals("Klaida")) {
                 textViewResult.setText("0");
                 firstNumber = 0;
                 operation = "";
@@ -158,18 +156,17 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
 
-            if(startNewNumber && !operation.isEmpty()) {
+            if (startNewNumber && !operation.isEmpty()) {
                 return;
             }
 
-            if(current.length() > 1) {
+            if (current.length() > 1) {
                 current = current.substring(0, current.length() - 1);
-            }
-            else{
+            } else {
                 current = "0";
             }
 
-            if(current.equals("-")) {
+            if (current.equals("-")) {
                 current = "0";
             }
 
@@ -179,11 +176,11 @@ public class MainActivity extends AppCompatActivity {
 
         buttonSign.setOnClickListener(v -> {
             String current = textViewResult.getText().toString();
-            if(current.equals("Klaida")) {
+            if (current.equals("Klaida")) {
                 return;
             }
 
-            if(startNewNumber && !operation.isEmpty()) {
+            if (startNewNumber && !operation.isEmpty()) {
                 return;
             }
 
@@ -203,13 +200,13 @@ public class MainActivity extends AppCompatActivity {
         Button buttonDecimal = findViewById(R.id.buttonDecimal);
         buttonDecimal.setOnClickListener(v -> {
             String current = textViewResult.getText().toString();
-            if(startNewNumber || current.equals("Klaida")) {
+            if (startNewNumber || current.equals("Klaida")) {
                 textViewResult.setText("0.");
                 startNewNumber = false;
                 return;
             }
 
-            if(!current.contains(".")) {
+            if (!current.contains(".")) {
                 textViewResult.setText(current + ".");
             }
         });
@@ -217,27 +214,25 @@ public class MainActivity extends AppCompatActivity {
         Button buttonPercent = findViewById(R.id.buttonPercent);
         buttonPercent.setOnClickListener(v -> {
             String current = textViewResult.getText().toString();
-            if(current.equals("Klaida")) {
+            if (current.equals("Klaida")) {
                 return;
             }
 
-            if(startNewNumber && !operation.isEmpty()) {
+            if (startNewNumber && !operation.isEmpty()) {
                 return;
             }
             double number = Double.parseDouble(current);
             double result;
 
-            if(operation.equals("+") || operation.equals("-")) {
+            if (operation.equals("+") || operation.equals("-")) {
                 result = firstNumber * number / 100;
-            }
-            else{
+            } else {
                 result = number / 100;
             }
 
-            if(result == (long) result) {
+            if (result == (long) result) {
                 textViewResult.setText(String.valueOf((long) result));
-            }
-            else{
+            } else {
                 textViewResult.setText(String.valueOf(result));
             }
             startNewNumber = operation.isEmpty();
@@ -246,16 +241,16 @@ public class MainActivity extends AppCompatActivity {
         Button buttonReciprocal = findViewById(R.id.buttonReciprocal);
         buttonReciprocal.setOnClickListener(v -> {
             String current = textViewResult.getText().toString();
-            if(current.equals("Klaida")) {
+            if (current.equals("Klaida")) {
                 return;
             }
 
-            if(startNewNumber && !operation.isEmpty()) {
+            if (startNewNumber && !operation.isEmpty()) {
                 return;
             }
             double number = Double.parseDouble(current);
 
-            if(number == 0) {
+            if (number == 0) {
                 textViewResult.setText("Klaida");
                 startNewNumber = true;
                 operation = "";
@@ -263,10 +258,9 @@ public class MainActivity extends AppCompatActivity {
             }
             double result = 1 / number;
 
-            if(result == (long) result) {
+            if (result == (long) result) {
                 textViewResult.setText(String.valueOf((long) result));
-            }
-            else{
+            } else {
                 textViewResult.setText(String.valueOf(result));
             }
             startNewNumber = operation.isEmpty();
@@ -282,12 +276,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
         buttonMR.setOnClickListener(v -> {
-            if(memoryValue == (long) memoryValue) {
+            if (memoryValue == (long) memoryValue) {
                 textViewResult.setText(
                         String.valueOf((long) memoryValue)
                 );
-            }
-            else{
+            } else {
                 textViewResult.setText(
                         String.valueOf(memoryValue)
                 );
@@ -297,7 +290,7 @@ public class MainActivity extends AppCompatActivity {
 
         buttonMS.setOnClickListener(v -> {
             String current = textViewResult.getText().toString();
-            if(current.equals("Klaida")) {
+            if (current.equals("Klaida")) {
                 return;
             }
             memoryValue = Double.parseDouble(current);
@@ -306,7 +299,7 @@ public class MainActivity extends AppCompatActivity {
 
         buttonMPlus.setOnClickListener(v -> {
             String current = textViewResult.getText().toString();
-            if(current.equals("Klaida")) {
+            if (current.equals("Klaida")) {
                 return;
             }
             double number = Double.parseDouble(current);
@@ -316,7 +309,7 @@ public class MainActivity extends AppCompatActivity {
 
         buttonMMinus.setOnClickListener(v -> {
             String current = textViewResult.getText().toString();
-            if(current.equals("Klaida")) {
+            if (current.equals("Klaida")) {
                 return;
             }
             double number = Double.parseDouble(current);
@@ -325,17 +318,53 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
-
-
     }
 
-    private void selectOperation(String selectedOperation){
+    private void selectOperation(String selectedOperation) {
         String current = textViewResult.getText().toString();
-        if(current.equals("Klaida")){
+        if (current.equals("Klaida")) {
             return;
         }
-        firstNumber = Double.parseDouble(current);
+        double number = Double.parseDouble(current);
+
+        if (!operation.isEmpty() && !startNewNumber) {
+            double result = 0;
+            switch (operation) {
+                case "+":
+                    result = firstNumber + number;
+                    break;
+                case "-":
+                    result = firstNumber - number;
+                    break;
+
+                case "*":
+                    result = firstNumber * number;
+                    break;
+
+                case "/":
+                    if (number == 0) {
+                        textViewResult.setText("Klaida");
+                        operation = "";
+                        firstNumber = 0;
+                        startNewNumber = true;
+                        return;
+                    }
+                    result = firstNumber / number;
+                    break;
+
+            }
+            firstNumber = result;
+
+            if (result == (long) result) {
+                textViewResult.setText(String.valueOf((long) result));
+            } else {
+                textViewResult.setText(String.valueOf(result));
+            }
+
+        } else if (operation.isEmpty()) {
+            firstNumber = number;
+        }
+
         operation = selectedOperation;
         startNewNumber = true;
     }
