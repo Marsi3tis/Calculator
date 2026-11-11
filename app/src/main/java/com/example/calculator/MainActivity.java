@@ -120,12 +120,9 @@ public class MainActivity extends AppCompatActivity {
             }
 
             double result = Math.sqrt(number);
-            if (result == (long) result) {
-                textViewResult.setText(String.valueOf((long) result));
-            }
-            else{
-                textViewResult.setText(String.valueOf(result));
-            }
+
+            textViewResult.setText(formatResult(result));
+
             startNewNumber = operation.isEmpty();
         });
 
@@ -232,12 +229,8 @@ public class MainActivity extends AppCompatActivity {
                 result = number / 100;
             }
 
-            if (result == (long) result) {
-                textViewResult.setText(String.valueOf((long) result));
-            }
-            else{
-                textViewResult.setText(String.valueOf(result));
-            }
+            textViewResult.setText(formatResult(result));
+
             startNewNumber = operation.isEmpty();
         });
 
@@ -261,11 +254,8 @@ public class MainActivity extends AppCompatActivity {
             }
             double result = 1 / number;
 
-            if (result == (long) result) {
-                textViewResult.setText(String.valueOf((long) result));
-            } else {
-                textViewResult.setText(String.valueOf(result));
-            }
+            textViewResult.setText(formatResult(result));
+
             startNewNumber = operation.isEmpty();
         });
 
@@ -279,15 +269,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         buttonMR.setOnClickListener(v -> {
-            if (memoryValue == (long) memoryValue) {
-                textViewResult.setText(
-                        String.valueOf((long) memoryValue)
-                );
-            } else {
-                textViewResult.setText(
-                        String.valueOf(memoryValue)
-                );
-            }
+            textViewResult.setText(formatResult(memoryValue));
             startNewNumber = operation.isEmpty();
         });
 
@@ -358,11 +340,7 @@ public class MainActivity extends AppCompatActivity {
             }
             firstNumber = result;
 
-            if (result == (long) result) {
-                textViewResult.setText(String.valueOf((long) result));
-            } else {
-                textViewResult.setText(String.valueOf(result));
-            }
+            textViewResult.setText(formatResult(result));
 
         } else if (operation.isEmpty()) {
             firstNumber = number;
